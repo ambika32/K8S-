@@ -9,5 +9,5 @@ spec:
   - name: webserver
     image: nginx
     ports:
-    - conatinerPort: 6443
+    - conatinerPort: 80
    
