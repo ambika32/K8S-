@@ -20,7 +20,7 @@ spec:
     - wegt
     - "-o"
     - "/work-dir/index.html"
-    - https://raw.githubusercontent.com/devopsyuva/testcode/master/index.html
+    - https://github.com/dubareddy/testcode/blob/master/index.html?raw=true
     volumeMounts:
     - name: workdir 
       mountPath: "/work-dir"
