@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadate: 
+  name: init-demo
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent  #Always, never
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: workdir
+      mountPath: /usr/share/nginx/html             
+  # These container are run during pod initialization
+  initContainers:
+  - name: install
+    image: alpine
+    command:
+    - wegt
+    - "-o"
+    - "/work-dir/index.html"
+    - https://github.com/dubareddy/testcode/blob/master/index.html?raw=true
+    volumeMounts:
+    - name: workdir 
+      mountPath: "/work-dir"
+  dnsPolicy: Default
+  volumes:
+  - name: workdir
+    emptyDir: {}  #emptydir date will be stored on worker node under  /var/lib/kubelet/pods/ with Id which can be picked from pod description
