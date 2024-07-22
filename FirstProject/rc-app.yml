@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: myhealetapp-container
-        image: ambika366/htmlfirstproject22july
+        image: ambika366/htmlfirstproject22july:1
         ports:
         - containerPort: 80
