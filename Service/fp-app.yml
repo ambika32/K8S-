@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: myfirstproject-rc
+spec:
+  replicas: 3
+  selector:
+    app: myfirstprojectapp
+    version: 2.6.1
+  template:
+    metadata:
+      labels:
+        app: myfirstprojectapp
+        version: 2.6.1
+    spec:
+      containers:
+      - name: myhealetapp-container
+        image: ambika366/htmlfirstproject22july:1
+        ports:
+        - containerPort: 80
