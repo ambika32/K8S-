@@ -7,8 +7,9 @@ metadata:
 spec:
   replicas: 3
   selector:
-    app: myfirstprojectapp1
-    version: 2.6.1
+    matchLabels:
+      app: myfirstprojectapp1
+      version: 2.6.1
   template:
     metadata:
       labels:
@@ -20,8 +21,8 @@ spec:
         image: ambika366/htmlfirstproject22july:1
         ports:
         - containerPort: 80
-      
---- 
+
+---
 
 apiVersion: apps/v1
 kind: Deployment
@@ -32,8 +33,9 @@ metadata:
 spec:
   replicas: 3
   selector:
-    app: myfirstprojectapp2
-    version: 2.6.2
+    matchLabels:
+      app: myfirstprojectapp2
+      version: 2.6.2
   template:
     metadata:
       labels:
