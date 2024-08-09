@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vertex-deploy1
+  labels:
+     app: myvertexapp1
+spec:
+  replicas: 3
+  selector:
+      matchLabels:
+        app: myvertexapp1
+  template:
+     metadata:
+       labels:
+           app: myvertexapp1
+     spec:
+       containers:
+       - name: myjavaapp1-container
+         image: nbktechnosys/myjavaimages2dec22:1
+         ports:
+         - containerPort: 8080
+
+--- 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vertex-deploy2
+  labels:
+     app: myvertexapp2
+spec:
+  replicas: 3
+  selector:
+      matchLabels:
+        app: myvertexapp2
+  template:
+     metadata:
+       labels:
+           app: myvertexapp2
+     spec:
+       containers:
+       - name: myjavaapp2-container
+         image: nbktechnosys/myjavaimages2dec22:1
+         ports:
+         - containerPort: 8080
