@@ -17,8 +17,8 @@ spec:
         version: 2.6.1
     spec:
       containers:
-      - name: myhealetapp-container
-        image: ambika366/htmlfirstproject22july:1
+      - name: myhealetapp1-container
+        image: ambika366/loginpagetemplate:latest
         ports:
         - containerPort: 80
 
@@ -43,7 +43,7 @@ spec:
         version: 2.6.2
     spec:
       containers:
-      - name: myhealetapp-container
-        image: ambika366/htmlfirstproject22july:1
+      - name: myhealetapp2-container
+        image: ambika366/loginpagetemplatenewimage:latest
         ports:
         - containerPort: 80
