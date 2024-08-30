@@ -1,0 +1,23 @@
+apiVersion: v1 
+kind: Pod 
+metadata:
+  name: demopod
+spec:
+  containers:
+  - name: test-container
+    iamge: k8s.gcr.io/busybox
+    command: ["/bin/bash", "-c", "env"]
+    env:
+    #Define environment variable
+      - name: USERNAME
+        valueform: 
+          configMapKeyRef:
+            #The configMap containing the value you want to assign to SPECIAL_LEVEL_KEY
+            name: nginx-data
+            # Specify the key associated with the value
+            key: username 
+      - name: DBPASSWORD
+        valueform:
+          configMapKeyRef:
+            name: nginx-data
+            key: DBpassword
