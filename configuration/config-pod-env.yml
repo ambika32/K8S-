@@ -9,7 +9,7 @@ spec:
       command: [ "/bin/sh", "-c", "env" ]
       env:
         # Define the environment variable
-        - name: USENRAME
+        - name: USERNAME
           valueFrom:
             configMapKeyRef:
               # The ConfigMap containing the value you want to assign to SPECIAL_LEVEL_KEY
